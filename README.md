@@ -10,6 +10,7 @@ Scripts description:
  - simulation_model.py: Script to run a single simulation, with a set visualization.
 
  - simulation_experiment.py: Script to run a simulation experiment.
+   
     #/!\ If you are working on windows, for some (obscure) reason python may return: 
     #ModuleNotFoundError: No module named  'model_function'. 
     #It'sa bug from the parallelization process. If it's appen, run the script with parameters set for very small 
