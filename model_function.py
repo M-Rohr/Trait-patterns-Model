@@ -1,8 +1,5 @@
 # -*- coding: utf-8 -*-
 """
-Created on May 2024
-
-@author: Matthias Rohr
 """
 # Import python modules
 import numpy as np
@@ -231,13 +228,6 @@ def multiprocess_lottery(dispo, S, seed_proba, commu, Ext_seed_rain, Fecundity):
     return out
 
 
-# def environmental_filter(Ti, Ek, omega, norm_env):
-#     omega0 = 1 / (np.sqrt(2 * np.pi) * omega)
-   
-#     Etal_fit = omega0 * np.exp(- (Ti[np.newaxis,] - Ek[:, np.newaxis])**2 / (2 * omega**2))
-#     return Etal_fit
-
-
 def Colonization(Community_matrix, Environmental_trait, omega, Environment_matrix,
                  n, S, Aij, We, Wc, Fecundity, Ext_seed_rain, K):
     """
@@ -266,9 +256,8 @@ def Colonization(Community_matrix, Environmental_trait, omega, Environment_matri
     # Reshape the community matrix
     commu = Community_matrix.reshape(-1, n**2).T
 
-    # Compute the environmental filtering
+    # Compute the environmental filter
     Seed_filter = np.exp(- (Environmental_trait[np.newaxis,] - Environment_matrix.reshape(n**2, 1)[:, np.newaxis])**2 / (2 * omega**2))
-    # Seed_filter =environmental_filter(Environmental_trait, Environment_matrix, omega)
     
     Seed_filter = Seed_filter.astype(np.float32).reshape((n**2, S))
     
