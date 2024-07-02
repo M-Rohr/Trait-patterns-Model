@@ -1,8 +1,5 @@
 # -*- coding: utf-8 -*-
 """
-Created on May 2024
-
-@author: Matthias Rohr
 """
 # Import python modules
 import os 
@@ -14,8 +11,8 @@ import pandas as pd
 import seaborn as sns
 
 ## Set working directory
-wd = 'C:\\Users\\rohrm\\Documents\\Thèse LECA\\articles\\papier modele assemblage\\Codes'
-# wd = '//bettik/PROJECTS/pr-teembio/rohrm/simu_python/explo_param/test_model_norma/d=0'
+## Set tour working directory path here:
+wd = 'YOUR_PATH' ### 
 os.chdir(wd)
 # Import function required to run the model :
 import model_function as model        
@@ -45,7 +42,7 @@ env_range = [0, 1]   # Range of the environmental values
 # Simulation processes parameters
 phi = .5           # Relative importance of symmetric competition vs hierarchical competition
 We = 1            # Strength of the environmental filtering
-Wc = 0            # Strength of the competition
+Wc = 10            # Strength of the competition
 
 
 ### I.2. Generate the species pool
@@ -85,7 +82,7 @@ g2.set_xlabel('')
 # Take between 2 and 5 minutes to run
 mkl.set_dynamic(True)
 start_time = time.time()
-Results = model.Simulation_model(max_tick = 3000,
+Results = model.Simulation_model(max_tick = 300,
                                  Community_matrix = Comm_matrix,
                                  S = S,
                                  omega = omega,
