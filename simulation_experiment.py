@@ -1,8 +1,5 @@
 # -*- coding: utf-8 -*-
 """
-Created on May 2024
-
-@author: Matthias Rohr
 """
 
 # Import python modules
@@ -17,7 +14,7 @@ import scipy
 import sklearn.preprocessing as sk
 
 ## Set working directory
-wd = 'C:\\Users\\rohrm\\Documents\\Thèse LECA\\articles\\papier modele assemblage\\Codes'
+wd = 'YOUR_PATH'
 os.chdir(wd)
 # Import function required to run the model :
 import model_function as model    
@@ -26,7 +23,7 @@ import model_function as model
 # I. Define the fix parameters for all the simulations
 # =============================================================================
 
-np.random.seed(25)
+# np.random.seed(25)
 
 ## Species parameters
 S = 100          # Number of species
@@ -41,7 +38,7 @@ Ext_seed_rain = 1 #  External migration rate
 n = 50                # Size of the landscape grid
 auto_corr = 5        # Autocorrelation of the environment across the landscape
 K = 10               # Carrying capacity of the cells
-structure = 'homogeneous' # Structure of the environmental grid, can be: homogeneous, autocorelated ('mosaic'), random or gradient
+structure = 'mosaic' # Structure of the environmental grid, can be: homogeneous, autocorelated ('mosaic'), random or gradient
 env_range = [0, 1]   # Range of the environmental values
 
 # Simulation processes parameters
@@ -60,7 +57,7 @@ pool_sp = list(np.linspace(1,16,16).astype('int8')) # Number of iteration for ea
 
 Set_of_param = np.array(list(itertools.product(correl, phi, pool_sp)))
 
-name = 'Simulation_experiment_homogeneous'
+name = 'Simulation_experiment'
 
 #%% ===========================================================================
 # III. Definition of the paralell simulation function 
@@ -157,7 +154,8 @@ print("Simulation experiment %s minutes ---" % ((time.time() - start_time)/60))
 # V. Compile and export results
 # =============================================================================== 
 
-wd = 'C:\\Users\\rohrm\\Documents\\Thèse LECA\\articles\\papier modele assemblage\\Codes\\verif_result_consistency'
+# Change wd if you want to save results in other file than the codes
+wd = 'YOUR_PATH'
 os.chdir(wd)
 
 Final_community = dict()
