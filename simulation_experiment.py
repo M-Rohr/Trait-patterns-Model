@@ -14,7 +14,7 @@ import scipy
 import sklearn.preprocessing as sk
 
 ## Set working directory
-wd = 'YOUR_PATH'
+wd = 'YOUR_PATH' # Path to the directory containing: model_function.py
 os.chdir(wd)
 # Import function required to run the model :
 import model_function as model    
