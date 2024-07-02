@@ -12,7 +12,7 @@ import seaborn as sns
 
 ## Set working directory
 ## Set tour working directory path here:
-wd = 'YOUR_PATH' ### 
+wd = 'YOUR_PATH' # Path to the directory containing: model_function.py
 os.chdir(wd)
 # Import function required to run the model :
 import model_function as model        
