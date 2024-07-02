@@ -1,8 +1,5 @@
 # -*- coding: utf-8 -*-
 """
-Created on May 2024
-
-@author: Matthias Rohr
 """
 
 # Import python modules
@@ -21,7 +18,7 @@ import matplotlib.patheffects as path_effects
 from matplotlib.colors import TwoSlopeNorm
 
 ## Set working directory
-wd = 'C:\\Users\\rohrm\\Documents\\Thèse LECA\\articles\\papier modele assemblage\\Codes'
+wd = 'YOUR_PATH' # Path to the directory containing: model_function.py and exploit_fun.py
 os.chdir(wd)
 # Import function required to run the model :
 import model_function as model    
@@ -30,7 +27,9 @@ import exploit_fun as exploit
 # =============================================================================
 # I. Simulation parameters
 # =============================================================================
-
+wd = 'YOUR_PATH' # Path to the directory containing the results of simulation_experiment.py
+os.chdir(wd)
+## Repeat the parameters set for Simulation_experiment
 ## Species parameters
 S = 100          # Number of species
 mu = 0.2          # Mortality rate
@@ -44,7 +43,7 @@ Ext_seed_rain = 1 #  External migration rate
 n = 50                # Size of the landscape grid
 auto_corr = 5        # Autocorrelation of the environment across the landscape
 K = 10               # Carrying capacity of the cells
-structure = 'homogeneous' # Structure of the environmental grid, can be: homogeneous, autocorelated ('mosaic'), random or gradient
+structure = 'mosaic' # Structure of the environmental grid, can be: homogeneous, autocorelated ('mosaic'), random or gradient
 env_range = [0, 1]   # Range of the environmental values
 
 # Simulation processes parameters
@@ -58,7 +57,7 @@ pool_sp = list(np.linspace(1,16,16).astype('int8')) # Number of iteration for ea
 
 Set_of_param = np.array(list(itertools.product(correl, phi, pool_sp)))
 
-name = ['Simulation_experiment_homogeneous']
+name = ['Simulation_experiment']
 
 
 var_list = ['mu', 'omega',  'sigma_s', 'sigma_h', 'Wc', 'We', 'correl', 'phi', 'pool_sp']
@@ -134,7 +133,7 @@ for i, phi_val in enumerate(phi):
     axs[i].set_title(f'Phi = {phi_val}', fontsize=15)
 
 plt.tight_layout()
-# plt.savefig('fig_4' + '.png', format="png")
+plt.savefig('fig_4' + '.png', format="png")
 plt.show()
 
 #%% Heatmaps for fig 5
@@ -187,7 +186,7 @@ sm = plt.cm.ScalarMappable(cmap=cmap, norm=norm)
 sm.set_array([])
 cbar = fig.colorbar(sm, ax=axes, orientation='vertical', fraction=0.02, pad=0.04)
 cbar.set_label('Colorbar Label')
-# plt.savefig('fig_5' + '.png', format="png")
+plt.savefig('fig_5' + '.png', format="png")
 plt.show()
 
 
