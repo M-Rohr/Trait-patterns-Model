@@ -1,5 +1,15 @@
 # Trait-patterns-Model
 
+## Fisrt install
+The script run with Python 3
+
+Activate the environment : source venv/bin/activate
+
+upgrade pip : pip install --upgrade pip
+
+Install the requierments : pip install -r requirements.txt
+
+
 ## Description
 A spatially explicit individual-based model that allows varying the relative importance of environmental filtering, and symmetric and hierarchical competition in community assembly.  
 
@@ -22,6 +32,4 @@ Scripts description:
  - Figs_simulation_experiment.py: Script to run the analysis of simulation experiment and generate the figure in the article. 
 
 
-## Installation
-The script run with Python 3, Anaconda environment is recomended to facilitate the importation of the python modules.
- 
+
