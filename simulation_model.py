@@ -6,7 +6,6 @@ import os
 import numpy as np
 import matplotlib.pyplot as plt
 import time
-import mkl
 import pandas as pd
 import seaborn as sns
 
@@ -80,7 +79,6 @@ g2.set_xlabel('')
 # =============================================================================
 
 # Take between 2 and 5 minutes to run
-mkl.set_dynamic(True)
 start_time = time.time()
 Results = model.Simulation_model(max_tick = 300,
                                  Community_matrix = Comm_matrix,
