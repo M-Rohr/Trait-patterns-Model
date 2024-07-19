@@ -71,6 +71,12 @@ n_sample = 80 # Number of subsamples for each observation scale
 # II. Compute the SES for each simulation, at the three different scale
 # =============================================================================
 
+### /!\ If you work on windows, python may return:
+### "BrokenProcessPool: A task has failed to un-serialize. Please ensure that the arguments of the function are all picklable."
+### It'sa bug from the parallelization process. If it's appen, run the script with parameters set for very small 
+### null model  (eg. n_it = 2, n_sample = 1) in debug mode, with a break point on line 95.
+### Then exot debug mode, the script should run properly.
+
 # Take 5 to 10 minutes to run (depending on the number of simulation, njobs value and teh hardware)
 results = list()
 start_time = time.time()
