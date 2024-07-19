@@ -3,7 +3,9 @@
 ## Fisrt install
 The script run with Python 3
 
-Activate the environment : source venv/bin/activate
+Set your directory:
+import os
+os.chdir("YOUR_PATH/Trait-patterns-Model")
 
 upgrade pip : pip install --upgrade pip
 
