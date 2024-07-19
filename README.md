@@ -2,15 +2,9 @@
 
 ## Fisrt install
 The script run with Python 3
-
-Set your directory:
-import os
-os.chdir("YOUR_PATH/Trait-patterns-Model")
-
-upgrade pip : pip install --upgrade pip
-
-Install the requierments : pip install -r requirements.txt
-
+- Set your directory: `import os` ` os.chdir("YOUR_PATH/Trait-patterns-Model")` 
+- upgrade pip : `pip install --upgrade pip`
+- Install the requierments : `pip install -r requirements.txt`
 
 ## Description
 A spatially explicit individual-based model that allows varying the relative importance of environmental filtering, and symmetric and hierarchical competition in community assembly.  
