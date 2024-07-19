@@ -21,7 +21,7 @@ Scripts description:
     #ModuleNotFoundError: No module named  'model_function'. \
     #It'sa bug from the parallelization process. If it's appen, run the script with parameters set for very small \
     #simulations (eg. n = 5, S = 10, max_tick = 3) in debug mode, with a break point somewhere in par_simul(). \
-    #Then the script should run correctly in 'normal' mode, for this session/console.
+    #Then the script should the script should run properly.
     
  - exploit_fun.py: Script with all the documented function required to analyze the results from simulation_experiment.py.
 
@@ -31,7 +31,7 @@ Scripts description:
      #"BrokenProcessPool: A task has failed to un-serialize. Please ensure that the arguments of the function are all picklable." \
      #It'sa bug from the parallelization process. If it's appen, run the script with parameters set for very small \
      #null model  (eg. n_it = 2, n_sample = 1) in debug mode, with a break point on line 95. \
-     #Then exot debug mode, the script should run properly.
+     #Then exit debug mode, the script should run properly.
 
 
 
