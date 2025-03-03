@@ -53,7 +53,7 @@ Wc = 10            # Strength of the competition
 # The parameters and range tested for the results
 correl = [0, 0.5, 0.8, 1]    # Traits correlations
 phi = [0, 0.5, 1]            # Relative importance of symmetric competition vs hierarchical competition
-pool_sp = list(np.linspace(1,16,16).astype('int8')) # Number of iteration for each parameter combination
+pool_sp = list(np.linspace(1,100,100).astype('int8')) # Number of iteration for each parameter combination
 
 Set_of_param = np.array(list(itertools.product(correl, phi, pool_sp)))
 
@@ -94,7 +94,7 @@ def par_simul(i, S, Fecundity, omega, sigma_s, sigma_h, Ext_seed_rain,
     Comm_matrix = model.init_commu(K, S, n)
 
     ### II. Run the simulation
-    Results = model.Simulation_model(max_tick = 300,
+    Results = model.Simulation_model(max_tick = 3000,
                                      Community_matrix = Comm_matrix,
                                      S = S,
                                      omega = omega,
@@ -130,6 +130,7 @@ def par_simul(i, S, Fecundity, omega, sigma_s, sigma_h, Ext_seed_rain,
 
 ## Simulation experiment can take from several minutes to several hours to run depending on :
     # Number of simulations 
+    # max_tick parameter in model.Simulation_model()
     # n_jobs and your hardware
     
 n_jobs = 16
