@@ -21,7 +21,7 @@ import matplotlib.patheffects as path_effects
 from matplotlib.colors import TwoSlopeNorm
 
 ## Set working directory
-wd = 'C:\\Users\\rohrm\\Documents\\Thèse LECA\\articles\\papier modele assemblage\\Codes'
+wd = 'YOUR_PATH'
 os.chdir(wd)
 
 # Import function required to run the model :
@@ -46,7 +46,7 @@ LHC_dtf = pickle.load(open_file)
 open_file.close()
 
 # Load res simu exp
-file_name = 'verif_result_consistency\\SES_Simulation_experiment.pkl'
+file_name = 'YOUR_PATH'
 open_file = open(file_name, "rb")
 SES_paper = pickle.load(open_file)
 open_file.close()
