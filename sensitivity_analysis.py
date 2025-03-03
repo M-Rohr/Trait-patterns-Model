@@ -21,18 +21,12 @@ import model_function as model
 
 ## Species parameters
 S = 100           # Number of species
-# mu = 0.2          # Mortality rate
-# Fecundity = 0.1   # Number of seed produced per individual
-# omega =  0.1      # Environmental niche breadth of the species
-# sigma_s = np.ones(S) * 0.1  # Symmetric competition breadth
-# sigma_h = np.ones(S) * 0.2  # Hierarchical competition breadth
 correl = 0      # Traits correlations
 Ext_seed_rain = 1  #  External migration rate
 
 ## Landscape parameters
 n = 50               # Size of the landscape grid
 auto_corr = 5        # Autocorrelation of the environment across the landscape
-# K = 10               # Carrying capacity of the cells
 structure = 'mosaic' # Structure of the environmental grid, can be: homogeneous, autocorelated ('mosaic'), random or gradient
 env_range = [0, 1]   # Range of the environmental values
 
