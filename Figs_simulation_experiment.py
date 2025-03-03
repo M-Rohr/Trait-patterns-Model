@@ -196,7 +196,57 @@ plt.savefig('fig_5' + '.png', format="png")
 plt.show()
 
 
+#%% Species diversity Vs trait correlation (fig S4)
+def shannon_index(abund):
+    pi = abund / np.sum(abund)
+    H = - np.nansum(pi * np.log(pi))
+    return np.exp(H)
 
+div_dtf = dict()
+shan_div = np.zeros(len(Final_communities))
+correl_lvl = []
+cption = []
+
+for i in range(len(Final_communities)):
+    A = np.sum(Final_communities[key[i]], (1,2))
+    shan_div[i] = shannon_index(A)
+    match = re.search(r'corr=([\d\.]+)_phi=([\d\.]+)', key[i])
+    corr_value = float(match.group(1))
+    phi_value = float(match.group(2))
+    correl_lvl.append(corr_value)
+    cption.append(phi_value)
+
+div_dtf['shannon'] = shan_div
+div_dtf['corr_value'] = correl_lvl
+div_dtf['phi_value'] = cption
+
+div_dtf = pd.DataFrame(div_dtf)
+fig, axs = plt.subplots(1, 1, figsize=(10, 6), sharey=True)
+palette = sns.color_palette('Greys', n_colors=4)
+sns.boxplot(data=div_dtf, x='corr_value', y='shannon', hue='phi_value', palette=palette)
+plt.savefig('fig_S4' + '.svg', format="svg")
+
+print('min:', np.min(shan_div))
+print('max:', np.max(shan_div))
+print('mean:', np.mean(shan_div))
+print('std:', np.std(shan_div))
+
+#%% Multivariate trait pattern (fig S5)
+
+phi = [0, 0.5, 1]
+data = SES_dtf
+fig, axs = plt.subplots(1, 3, figsize=(18, 6), sharey=True)
+
+for i, phi_val in enumerate(phi):
+    data_phi = data.loc[data['phi'] == phi_val]
+    data_phi = data_phi.loc[data_phi['Traits'] == 'Multivariate_metric']
+    custom_boxplot(data_phi, 'scale', 'SES', 'corr', axs[i])
+    axs[i].set_ylabel('SES', fontsize=15)
+    axs[i].set_title(f'Phi = {phi_val}', fontsize=15)
+
+plt.tight_layout()
+plt.savefig('fig_S5_100pool' + '.svg', format="svg")
+plt.show()
 
 
 
