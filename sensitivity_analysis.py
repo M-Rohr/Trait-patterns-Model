@@ -9,7 +9,7 @@ import pickle
 import scipy
 
 ## Set working directory
-wd = 'C:\\Users\\rohrm\\Documents\\Thèse LECA\\articles\\papier modele assemblage\\Codes'
+wd = 'YOUR_PATH'
 os.chdir(wd)
 ## Import function required to run the model :
 import model_function as model    
