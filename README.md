@@ -32,6 +32,11 @@ Scripts description:
      #It'sa bug from the parallelization process. If it's appen, run the script with parameters set for very small \
      #null model  (eg. n_it = 2, n_sample = 1) in debug mode, with a break point on line 95. \
      #Then exit debug mode, the script should run properly.
+   
+ - sensitivity_analysis.py: Script to perform the sensitivity analysis of the model's fix parameter. Since the analysis is quite intensive, we recomend to use a cluster for this script.
+ - exploit_sensitivity_analysis.py: Script to compute the results from the sensitivity analysis and save result as pkl file to be used to generate figures.
+ - fig_sensi_analysis/py: Script to generate the figure of the sensitivity analysis (supplementary material, part 1).
+ 
 
 
 
